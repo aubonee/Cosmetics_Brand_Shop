@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "brandName": "L'Oréal",
+      "brandImage": "https://i.ibb.co/9YGtCxt/loreal.jpg      "
+    },
+    {
+      "id": 2,
+      "brandName": "Chanel",
+      "brandImage": "https://i.ibb.co/mFpKM8F/Chanel.jpg"
+    },
+    {
+      "id": 3,
+      "brandName": "Dior",
+      "brandImage": "https://i.ibb.co/Zfy9Wt2/Dior.jpg"
+    },
+
+    {
+      "id": 4,
+      "brandName": "Procter & Gamble",
+      "brandImage": "https://i.ibb.co/xzB7Ggf/pGbeauty.jpg"
+    },
+    {
+      "id": 5,
+      "brandName": "Revlon",
+      "brandImage": "https://i.ibb.co/pwsKb20/Revlon.jpg"
+    },
+    {
+      "id": 6,
+      "brandName": "Coty",
+      "brandImage": "https://i.ibb.co/6RVV31f/Coty.jpg"
+    }
+  ]
+  

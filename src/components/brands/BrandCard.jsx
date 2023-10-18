@@ -7,7 +7,7 @@ const BrandCard = ({brand}) => {
     return (
        < div>
 
-       <Link to={`/brand/${id}`} relative="path">
+       <Link to={`/brand/${brandName}`} relative="path">
         <div >
            <div className="card"></div>
            <img src={brandImage} alt="" width="450" height="300" className='rounded-none' />

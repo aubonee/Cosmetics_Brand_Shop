@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import BrandlProductCard from './BrandlProductCard';
 
@@ -13,7 +13,7 @@ const BrandlProducts = () => {
             brand products
             <h1>{product.length}</h1>
             {
-                product  .map(oneproduct =><BrandlProductCard key={oneproduct._id} oneproduct={oneproduct}></BrandlProductCard>)
+                product.map(oneproduct =><BrandlProductCard key={oneproduct._id} oneproduct={oneproduct}></BrandlProductCard>)
                // .filter(oneproduct => oneproduct.brandName === brandName)
               
             }

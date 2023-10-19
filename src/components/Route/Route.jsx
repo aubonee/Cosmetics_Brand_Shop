@@ -30,7 +30,7 @@ const router = createBrowserRouter([
           // path: "/brand/:brandname",
           path: "/brand/:brandName",
           element: <BrandlProducts></BrandlProducts>,
-          loader: ()=>fetch('http://localhost:5000/products'),
+          loader: ()=>fetch('https://cosmetics-brand-server.vercel.app/products'),
         },
     
 

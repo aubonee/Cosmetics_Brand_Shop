@@ -4,6 +4,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Mainlayout from '../../layout/Mainlayout';
 import AddProduct from '../../pages/addProduct/AddProduct';
 import BrandlProducts from '../../pages/brandProductPages/BrandlProducts';
+import Login from '../../pages/login/Login';
+import Register from '../../pages/Signup/Register';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -30,15 +32,16 @@ const router = createBrowserRouter([
           element: <BrandlProducts></BrandlProducts>,
           loader: ()=>fetch('http://localhost:5000/products'),
         },
+    
 
-        // {
-        //   path: "/Login",
-        //   element: <Login></Login>,
-        // },
-        // {
-        //   path: "/Register",
-        //   element: <Register></Register>,
-        // },
+        {
+          path: "/login",
+          element: <Login></Login>,
+        },
+        {
+          path: "/register",
+          element: <Register></Register>,
+        },
       
   
       ]

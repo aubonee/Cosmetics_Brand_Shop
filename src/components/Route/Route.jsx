@@ -6,6 +6,7 @@ import AddProduct from '../../pages/addProduct/AddProduct';
 import BrandlProducts from '../../pages/brandProductPages/BrandlProducts';
 import Login from '../../pages/login/Login';
 import Register from '../../pages/Signup/Register';
+import Update from '../update/Update';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -22,17 +23,20 @@ const router = createBrowserRouter([
           element: <AddProduct></AddProduct>,
          
         },
-        // {
-        //   path: "/brand/:id",
-        //   element: <LorealProducts></LorealProducts>,
-        // },
+   
         {
-          // path: "/brand/:brandname",
+          
           path: "/brand/:brandName",
           element: <BrandlProducts></BrandlProducts>,
-          loader: ()=>fetch('https://cosmetics-brand-server.vercel.app/products'),
+          loader: ({params})=>fetch(`http://localhost:5000/brand/${params.brandName}`),
         },
-    
+        
+        {
+         
+          path: "/brand/update/:id",
+          element: <Update></Update>,
+          loader: ({params})=>fetch(`http://localhost:5000/brand/update/${params.id}`),
+        },
 
         {
           path: "/login",

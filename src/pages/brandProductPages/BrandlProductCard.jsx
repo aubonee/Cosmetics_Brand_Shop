@@ -1,7 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const BrandlProductCard = ({oneproduct}) => {
-    const { name, brandname,category, photourl, price, rating, shortDesc} = oneproduct;
+  
+    const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = oneproduct;
+   
+    const handleDelete=_id=>{
+             console.log(_id);
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+    
+                //console.log("delete confirmed");
+                fetch(`https://cosmetics-brand-server.vercel.app/products/${_id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("data");
+                    console.log(data);
+                    if(data.deletedCount > 0){
+                        Swal.fire(
+                            'Deleted!',
+                            'Your product has been deleted.',
+                            'success'
+                         )
+                    }
+                })
+                }
+              })
+    }
+  
     return (
         <div>
                <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -13,7 +50,10 @@ const BrandlProductCard = ({oneproduct}) => {
     <p>{shortDesc}.</p>
     <div className="card-actions justify-end">
         <p>{category}</p>
-      <button className="btn btn-primary">View Details</button>
+        {/* <button className="btn btn-primary">Edit</button> */}
+      <Link to={`/brand/update/${_id}`} ><button className="btn btn-primary">Edit</button></Link>
+      <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete</button>
+      <button className="btn bg-red-400">View Details</button>
     </div>
   </div>
 </div>

@@ -1,16 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
-    const handleLogin=e=>{
-    
+
+    const[user,setUser] =useState(null); 
+
+    const {signIn} =useContext(AuthContext);
+    const location = useLocation();
+      const navigate = useNavigate();
+      console.log(' login page', location);
+  
+      const handleLogin = e =>{
         e.preventDefault();
         const form =new FormData(e.currentTarget);
       const email=form.get('email');
       const password=form.get('password');
     console.log(email,password);
-
-    }
+      signIn(email,password)
+     
+      .then(result=>{
+          console.log(result.user)
+          Swal.fire({
+           icon: 'success',
+           title: 'Login Succesful',
+           showConfirmButton: false,
+           timer: 1500
+         })
+            
+         // navigate after login
+         navigate(location?.state ? location.state : '/');
+      })
+      .catch(error=>{
+        console.error(error)
+        Swal.fire({
+         icon: 'error',
+         title: 'Oops...',
+         text: 'Something went wrong!',
+        
+       })
+      }
+      )
+}
     return (
         <div className=' flex flex-col justify-center items-center'>
    
@@ -38,9 +71,10 @@ const Login = () => {
     <div className="form-control mt-6">
       <button className="btn bg-[#702632] text-white">Login</button>
 
-      {/* <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div> */}
+      <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>
       
     </div>
+    {/* <div className='flex items-center justify-center my-2'><GoogleLogin></GoogleLogin></div> */}
   </form>
   <div className='text-center mb-5'><p>Dont have an account?</p> <span className='text-[#702632] font-bold'> <Link to="/register">Register</Link></span> </div>
 </div>

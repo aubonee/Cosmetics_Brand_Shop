@@ -1,19 +1,58 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import GoogleLogin from '../login/GoogleLogin';
 
 const Register = () => {
     
-    const {createUser} = useContext(AuthContext);
+    const [registerError,setRegisterError]=useState('');
+    const {createUser} =useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(' register page', location);
     const handleRegister=e=>{
         e.preventDefault();
-        const form =e.current.target;
+        const form =new FormData(e.currentTarget);
        
-        const name = form.name.value;
-        const photourl = form.photourl.value;
-        const email = form.email.value;
-        const password = form.password.value;
+        const name = form.get('name');
+        const photourl = form.get('photourl');
+        const email = form.get('email');
+        const password = form.get('password');
         console.log(name, photourl,email,password);
+
+
+        setRegisterError('')
+
+        if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z0-9!@#$%^&*(),.?":{}|<>]{6,}$/.test(password)){
+          setRegisterError('password invalid');
+          return;
+
+        }
+
+  
+       createUser(email,password)
+       .then(result=>{
+          // navigate after login
+          navigate(location?.state ? location.state : '/');
+           console.log(result.user)
+           console.log(result.user)
+           Swal.fire({
+            icon: 'success',
+            title: 'Registration  Succesful',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+       })
+        .catch(error=>{
+          console.error(error)
+          setRegisterError(error.message);
+         
+        
+        } )
+       
+
 
     }
     return (
@@ -53,14 +92,14 @@ const Register = () => {
      <span className="label-text">Password</span>
    </label>
    <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-   {/* {
- registerError && <p className='text-red-600 p-3'>{registerError}</p> } */}
+   {
+ registerError && <p className='text-red-600 p-3'>{registerError}</p> }
   
  </div>
  <div className="form-control mt-6">
    <button className="btn bg-[#702632] text-white">Register</button>
  
-   {/* <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div> */}
+   <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>
  </div>
 </form>
 

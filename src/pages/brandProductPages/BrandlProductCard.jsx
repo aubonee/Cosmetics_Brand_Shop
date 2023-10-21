@@ -53,7 +53,7 @@ const BrandlProductCard = ({oneproduct}) => {
         {/* <button className="btn btn-primary">Edit</button> */}
       <Link to={`/brand/update/${_id}`} ><button className="btn btn-primary">Edit</button></Link>
       <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete</button>
-      <button className="btn bg-red-400">View Details</button>
+      <Link to={`/viewDetail/${_id}`} > <button className="btn bg-red-400">View Details</button> </Link>
     </div>
   </div>
 </div>

@@ -7,10 +7,14 @@ import BrandlProducts from '../../pages/brandProductPages/BrandlProducts';
 import Login from '../../pages/login/Login';
 import Register from '../../pages/Signup/Register';
 import Update from '../update/Update';
+import ViewDetail from '../../firebase/ViewDetail';
+import ErrorPage from '../../pages/ErrorPage';
+import PrivateRoute from '../PrivateRoute';
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Mainlayout></Mainlayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
           path: "/",
@@ -20,7 +24,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/addproduct",
-          element: <AddProduct></AddProduct>,
+          element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
          
         },
    
@@ -36,6 +40,12 @@ const router = createBrowserRouter([
           path: "/brand/update/:id",
           element: <Update></Update>,
           loader: ({params})=>fetch(`http://localhost:5000/brand/update/${params.id}`),
+        },
+        {
+         
+          path: "/viewDetail/:id",
+          element: <ViewDetail></ViewDetail>,
+          loader: ({params})=>fetch(`http://localhost:5000/viewDetail/${params.id}`),
         },
 
         {

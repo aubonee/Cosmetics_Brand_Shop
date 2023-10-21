@@ -2,11 +2,40 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const ViewDetail = () => {
-    const oneproduct =useLoaderData();
-    const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = oneproduct;
+    const detail =useLoaderData();
+   const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = detail;
    
     
-    // console.log(loadData);
+    const handleCart =() => {
+      
+
+        console.log(" handle cart funtion");
+
+    //       //send data to the server
+    //   fetch('https://cosmetics-brand-server.vercel.app/products',{
+    //     method:'POST',
+    //     headers :{
+    //       'content-type':'application/json'
+    //     },
+    //     body : JSON.stringify(cartproduct)
+    //   })
+    //   .then(res=>res.json())
+    //   .then(data =>{
+    //     console.log(data);
+    //     if(data.insertedId){
+    //         Swal.fire(
+    //             'Good job!',
+    //             'You clicked the button!',
+    //             'success'
+    //           )
+
+
+    //     }
+    //   })
+
+   
+    }
+   
     return (
         <div className='flex items-center justify-center'>
            
@@ -25,7 +54,7 @@ const ViewDetail = () => {
       <div className="badge badge-outline">Rating : {rating}</div>
       <div className="badge badge-outline">Category :{category}</div>
       <div>
-        <Link> <button>Add to Cart</button></Link>
+        <button onClick={handleCart()}>Add to Cart</button>
       </div>
     </div>
   </div>

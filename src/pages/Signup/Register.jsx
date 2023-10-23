@@ -7,7 +7,7 @@ import GoogleLogin from '../login/GoogleLogin';
 const Register = () => {
     
     const [registerError,setRegisterError]=useState('');
-    const {createUser} =useContext(AuthContext);
+    const {createUser,updateUser,setUser} =useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     console.log(' register page', location);
@@ -33,16 +33,25 @@ const Register = () => {
   
        createUser(email,password)
        .then(result=>{
-          // navigate after login
-          navigate(location?.state ? location.state : '/');
-           console.log(result.user)
-           console.log(result.user)
-           Swal.fire({
-            icon: 'success',
-            title: 'Registration  Succesful',
-            showConfirmButton: false,
-            timer: 1500
+        updateUser(name, photourl)
+        .then(()=>{
+          setUser((prev)=>
+          {
+                    const updatedUser={...prev,displayName:name,photoURL:photourl}
+                    return updatedUser;
           })
+          navigate(location?.state ? location.state : '/');
+          console.log(result.user)
+          console.log(result.user)
+          Swal.fire({
+           icon: 'success',
+           title: 'Registration  Succesful',
+           showConfirmButton: false,
+           timer: 1500
+         })
+        })
+          // navigate after login
+         
 
        })
         .catch(error=>{

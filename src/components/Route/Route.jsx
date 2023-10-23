@@ -10,6 +10,8 @@ import Update from '../update/Update';
 import ViewDetail from '../../firebase/ViewDetail';
 import ErrorPage from '../../pages/ErrorPage';
 import PrivateRoute from '../PrivateRoute';
+import MyCart from '../../pages/cart/MyCart';
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -48,6 +50,12 @@ const router = createBrowserRouter([
           loader: ({params})=>fetch(`http://localhost:5000/viewDetail/${params.id}`),
         },
 
+       
+        {
+          path: "/myCart",
+          element: <MyCart></MyCart>,
+          
+        },
         {
           path: "/login",
           element: <Login></Login>,

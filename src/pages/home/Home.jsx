@@ -8,7 +8,7 @@ const Home = () => {
     const brands = useLoaderData()
 
     return (
-        <div>
+        <div className='home-section'>
           
             <Banner></Banner>
             <Brands brands ={brands}></Brands>

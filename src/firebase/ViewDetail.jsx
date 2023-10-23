@@ -1,37 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const ViewDetail = () => {
+  const {user} =useContext(AuthContext)
     const detail =useLoaderData();
    const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = detail;
    
     
     const handleCart =() => {
-      
-
-        console.log(" handle cart funtion");
-
-    //       //send data to the server
-    //   fetch('https://cosmetics-brand-server.vercel.app/products',{
-    //     method:'POST',
-    //     headers :{
-    //       'content-type':'application/json'
-    //     },
-    //     body : JSON.stringify(cartproduct)
-    //   })
-    //   .then(res=>res.json())
-    //   .then(data =>{
-    //     console.log(data);
-    //     if(data.insertedId){
-    //         Swal.fire(
-    //             'Good job!',
-    //             'You clicked the button!',
-    //             'success'
-    //           )
-
-
-    //     }
-    //   })
+      const newItem={...detail,email:user?.email}
+  fetch(`http://localhost:5000/cart`,{
+    method:'POST',
+    headers:{
+      'content-type':'application/json'
+    },body:JSON.stringify(newItem)
+  })
+   
 
    
     }
@@ -54,7 +39,7 @@ const ViewDetail = () => {
       <div className="badge badge-outline">Rating : {rating}</div>
       <div className="badge badge-outline">Category :{category}</div>
       <div>
-        <button onClick={handleCart()}>Add to Cart</button>
+        <button className='btn bg-red-400' onClick={()=>handleCart()}>Add to Cart</button>
       </div>
     </div>
   </div>

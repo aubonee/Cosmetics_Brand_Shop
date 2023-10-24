@@ -83,7 +83,7 @@ const Navbar = () => {
   {/* <div className="flex"> */}
 <div className="flex ">
       {
-        user && <div className="flex  items-center"> <div><img className=" w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> <div>{user.displayName} </div> </div> 
+        user && <div className="flex  items-center"> <div><img className=" w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> <h2>{user.displayName}</h2> </div> 
       }
     </div>
 

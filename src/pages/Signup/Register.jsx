@@ -37,7 +37,7 @@ const Register = () => {
         .then(()=>{
           setUser((prev)=>
           {
-                    const updatedUser={...prev,displayName:name,photoURL:photourl}
+                    const updatedUser={...prev, displayName:name, photoURL:photourl}
                     return updatedUser;
           })
           navigate(location?.state ? location.state : '/');

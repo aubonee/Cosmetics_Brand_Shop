@@ -20,7 +20,7 @@ const CartCard = ({detail,cart,setCart}) => {
            if (result.isConfirmed) {
 
            //console.log("delete confirmed");
-           fetch(`http://localhost:5000/cart/${_id}`, {
+           fetch(`https://cosmetics-brand-server.vercel.app/cart/${_id}`, {
                method: 'DELETE'
            })
            .then(res => res.json())

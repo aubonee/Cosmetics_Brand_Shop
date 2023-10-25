@@ -8,7 +8,7 @@ const MyCart = () => {
     const {user} =useContext(AuthContext)
     useEffect(()=>
     {
-        fetch(`http://localhost:5000/cart/${user?.email}`).then(res=>res.json())
+        fetch(`https://cosmetics-brand-server.vercel.app/cart/${user?.email}`).then(res=>res.json())
         .then(data=>setCart(data))
     },[user])
 

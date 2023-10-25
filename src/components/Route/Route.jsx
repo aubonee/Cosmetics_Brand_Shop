@@ -39,20 +39,20 @@ const router = createBrowserRouter([
           
           path: "/brand/:brandName",
           element: <BrandlProducts></BrandlProducts>,
-          loader: ({params})=>fetch(`http://localhost:5000/brand/${params.brandName}`),
+          loader: ({params})=>fetch(`https://cosmetics-brand-server.vercel.app/brand/${params.brandName}`),
         },
         
         {
          
           path: "/brand/update/:id",
           element:<PrivateRoute><Update></Update></PrivateRoute> ,
-          loader: ({params})=>fetch(`http://localhost:5000/brand/update/${params.id}`),
+          loader: ({params})=>fetch(`https://cosmetics-brand-server.vercel.app/brand/update/${params.id}`),
         },
         {
          
           path: "/viewDetail/:id",
           element: <PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/viewDetail/${params.id}`),
+          loader: ({params})=>fetch(`https://cosmetics-brand-server.vercel.app/viewDetail/${params.id}`),
         },
 
        

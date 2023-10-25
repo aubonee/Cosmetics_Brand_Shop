@@ -62,25 +62,25 @@ const AddProduct = () => {
             <div className="form-control col-span-4 lg:col-span-2">
          
           {/* <input  type="text" placeholder="Brand Name" name="brandname" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required/> */}
-          <select id="category"  placeholder="Category" name="brandname" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required>
-          <option value=" brand" disabled>Select Brand</option>
+          <select id="brandname"  placeholder="brandname" name="brandname" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required>
+          <option value="brand" disabled>Select Brand</option>
         <option value="Loreal">Loreal</option>
         <option value="Chanel">Chanel</option>
         <option value="Dior">Dior</option>
         <option value="Base Makeup">Base Makeup</option>
         <option value="Procter & Gamble">Procter & Gamble</option>
         <option value="Revlon">Revlon</option>
-        <option value="Revlon">Coty</option>
+        <option value="Coty">Coty</option>
         
       </select>
         </div>
         <div className="form-control col-span-4 ">
         <select id="category"  placeholder="Category" name="category" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required>
-        <option value="SkinCare">SkinCare</option>
+        <option value="Skin Care">SkinCare</option>
         <option value="Eye Makeup">Eye Makeup</option>
         <option value="Sun Block">Sun Block</option>
         <option value="Base Makeup">Base Makeup</option>
-        <option value=" Lipstick and Gloss"> Lipstick and Gloss</option>
+        <option value="Lipstick and Gloss"> Lipstick and Gloss</option>
         <option value="Hair Care">HairCare</option>
         
       </select>

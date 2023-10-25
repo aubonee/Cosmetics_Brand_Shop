@@ -1,7 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const CartCard = ({detail}) => {
+const CartCard = ({detail,cart,setCart}) => {
 
     
     const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = detail;
@@ -33,6 +33,8 @@ const CartCard = ({detail}) => {
                        'This product is deleted from your cart.',
                        'success'
                     )
+                    const cartdelete = cart.filter(item=>item._id!=_id)
+                    setCart(cartdelete);
                }
            })
           }
@@ -43,8 +45,8 @@ const CartCard = ({detail}) => {
     return (
         
 
-            <div className="card card-side bg-base-100 shadow-xl">
-  <figure><img src={photourl} alt="Movie"/></figure>
+            <div className="mx-auto py-5 my-5 card max-w-[900px] h-[250px] card-side bg-base-100 shadow-xl">
+  <figure className='h-full'><img className='ml-5 h-full' src={photourl} alt="Movie"/></figure>
   <div className="card-body">
     <h2 className="card-title"> {name}</h2>
     <p>{shortDesc}</p>

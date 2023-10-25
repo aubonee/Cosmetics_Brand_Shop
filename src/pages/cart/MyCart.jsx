@@ -14,11 +14,20 @@ const MyCart = () => {
 
          console.log(cart);
     return (
-        <div className=''>
-          <div  className='grid grid-cols-2 gap-5'>
-          {
+        <div className='min-h-[60vh]'>
+          <div  className='flex-flex-col justify-center items-center'>
+
+          {cart.length !== 0 ? (
+      
+      
+     
+      cart.map(detail =><CartCard cart={cart} setCart={setCart} key={detail._id} detail={detail}></CartCard>))
+      : <div className='flex justify-center items-center'>  <h2 className=' text-5xl font-extra-bold mt-10 w-[500px] text-center'>There is no products in the Cart</h2></div>
+        
+    }
+          {/* {
                   cart.map(detail =><CartCard key={detail._id} detail={detail}></CartCard>)
-        }
+        } */}
           </div>
 
           

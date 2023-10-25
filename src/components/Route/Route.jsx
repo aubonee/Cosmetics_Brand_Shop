@@ -29,6 +29,11 @@ const router = createBrowserRouter([
           element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
          
         },
+        // {
+        //   path: "/whychoose",
+        //   element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+         
+        // },
    
         {
           
@@ -40,20 +45,20 @@ const router = createBrowserRouter([
         {
          
           path: "/brand/update/:id",
-          element: <Update></Update>,
+          element:<PrivateRoute><Update></Update></PrivateRoute> ,
           loader: ({params})=>fetch(`http://localhost:5000/brand/update/${params.id}`),
         },
         {
          
           path: "/viewDetail/:id",
-          element: <ViewDetail></ViewDetail>,
+          element: <PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/viewDetail/${params.id}`),
         },
 
        
         {
           path: "/myCart",
-          element: <MyCart></MyCart>,
+          element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
           
         },
         {

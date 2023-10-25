@@ -3,7 +3,7 @@ import React from 'react';
 const ErrorPage = () => {
     return (
         <div>
-            not found
+           <img src="https://i.ibb.co/Mk6zPv2/error.webp" alt="" />
         </div>
     );
 };

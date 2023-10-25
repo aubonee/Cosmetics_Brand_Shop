@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const BrandlProductCard = ({oneproduct}) => {
   
     const { _id ,name, brandname,category, photourl, price, rating, shortDesc} = oneproduct;
@@ -40,20 +41,33 @@ const BrandlProductCard = ({oneproduct}) => {
     }
   
     return (
-        <div>
-               <div className="card lg:card-side bg-base-100 shadow-xl">
-  <figure><img src={photourl} alt="Album"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">{name}</h2>
-    <h2 className="card-title">{brandname}</h2>
-    <p>{category}</p>
-    <p>{shortDesc}.</p>
-    <div className="card-actions justify-end">
-        <p>{category}</p>
+        <div >
+               <div className="card flex flex-col w-[400px]  mx-10 my-10 bg-base-100 shadow-xl">
+                <div> <figure><img className='  w-[400px] h-[280px]' src={photourl} alt="Album"/></figure></div>
+ 
+  <div className="my-5 card-body text-center p-0 px-3">
+  <h2 className=' text-yellow-500'>{rating}  <FontAwesomeIcon icon={ faStar} /></h2> 
+    <h2 className="text-2xl font-bold text-center">{name}</h2>
+   <div className='mx-0  flex  justify-between items-center'> 
+    <h2 className=" text-2xl font-bold text-[#FF6969] ">{brandname}</h2>
+    <h2 className='text-sm text-white px-2 py-1  bg-[#FF6969] rounded-lg '>{category}</h2>
+   </div>
+    <p>{shortDesc}</p>
+   
+    <br />
+    <div className=' gap-5'>
+      
         {/* <button className="btn btn-primary">Edit</button> */}
-      <Link to={`/brand/update/${_id}`} ><button className="btn btn-primary">Edit</button></Link>
-      <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete</button>
-      <Link to={`/viewDetail/${_id}`} > <button className="btn bg-red-400">View Details</button> </Link>
+        <div className='flex justify-around items-center'>
+
+        <div><Link to={`/brand/update/${_id}`} ><button className="font-2xl text-blue-500">Edit</button></Link></div>  
+        <div><Link to={`/viewDetail/${_id}`} > <button className="btn text-white bg-[#141E46]">View Details</button> </Link></div>  
+   <div className='-mt-2 mb-5'> <button onClick={()=>handleDelete(_id)} className=" text-blue-500">Delete</button></div> 
+
+        </div>
+    
+   
+    
     </div>
   </div>
 </div>

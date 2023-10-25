@@ -49,25 +49,24 @@ const Update = () => {
     }
     return (
         <div>
-            update a product:{name};
-            <h2>  price:{price}</h2>
+           
             <div className="w-full">
-            Add product
-
+            
+           <h2 className='mt-5 text-4xl font-bold text-center text-[#FF6969]'>Update a Product:{name}</h2> 
             <div className="w-3/4 mx-auto">
                   
-            <form  onSubmit={handleUpdate} className=' my-12 py-12 px-5 '>
+            <form  onSubmit={handleUpdate} className='mt-5 mb-12 py-12 px-5 '>
             <div className='grid grid-cols-4 gap-4'>
             <div className="form-control col-span-4 lg:col-span-2">
           
-          <input type="text" placeholder="Name" name="name" defaultValue={name} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required />
+          <input type="text" placeholder="Name" name="name" defaultValue={name} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required />
         </div>
             <div className="form-control col-span-4 lg:col-span-2">
          
-          <input  type="text" placeholder="Brand Name" name="brandname" defaultValue={brandname} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required/>
+          <input  type="text" placeholder="Brand Name" name="brandname" defaultValue={brandname} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required/>
         </div>
         <div className="form-control col-span-4 ">
-        <select id="category"  placeholder="Category"  name="category"  defaultValue={category} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required>
+        <select id="category"  placeholder="Category"  name="category"  defaultValue={category} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required>
         <option value="SkinCare">SkinCare</option>
         <option value="Eye Makeup">Eye Makeup</option>
         <option value="Sun Block">Sun Block</option>
@@ -80,13 +79,13 @@ const Update = () => {
         </div>
         <div className="form-control col-span-4 row-span-2">
           
-        <input type="text" placeholder="imageURL" name="photourl" defaultValue={photourl} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required />
+        <input type="text" placeholder="imageURL" name="photourl" defaultValue={photourl} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required />
         </div>
         <div className="form-control  col-span-4 lg:col-span-2">
-        <input type="number" placeholder="Rating" name="rating" defaultValue={rating} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required />
+        <input type="number" placeholder="Rating" name="rating" defaultValue={rating} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required />
         </div>
         <div className=" form-control col-span-4 lg:col-span-2">
-        <input type="text" placeholder="price" name="price" defaultValue={price} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required />
+        <input type="text" placeholder="price" name="price" defaultValue={price} className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required />
           
         </div>
         
@@ -94,12 +93,12 @@ const Update = () => {
 
             </div>
             <div className="form-control mt-5">
-            <input type="text" placeholder="Short Description" defaultValue={shortDesc} name="shortDesc" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#912F40]" required />
+            <input type="text" placeholder="Short Description" defaultValue={shortDesc} name="shortDesc" className="bg-gray-100 input input-bordered border-3 rounded-none  border-[#FF6969]" required />
       
        </div>
 
        <div>
-        <button type="submit"  className='text-white btn btn-block my-3 bg-[#912F40]'>Update Product</button></div>
+        <button type="submit"  className='text-white btn btn-block my-3 bg-[#FF6969]'>Update Product</button></div>
           </form>
          
       

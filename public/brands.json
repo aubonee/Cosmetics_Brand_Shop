@@ -1,18 +1,18 @@
 [
     {
       "id": 1,
-      "brandName": "L'Oréal",
-      "brandImage": "https://i.ibb.co/9YGtCxt/loreal.jpg      "
+      "brandName": "Loreal",
+      "brandImage": "https://i.ibb.co/94gDxYM/Loreal-brand.webp"
     },
     {
       "id": 2,
       "brandName": "Chanel",
-      "brandImage": "https://i.ibb.co/mFpKM8F/Chanel.jpg"
+      "brandImage": "https://i.ibb.co/K2QJWh8/chanel.webp"
     },
     {
       "id": 3,
       "brandName": "Dior",
-      "brandImage": "https://i.ibb.co/Zfy9Wt2/Dior.jpg"
+      "brandImage": "https://i.ibb.co/1J8t14Q/Dior.jpg"
     },
 
     {
@@ -23,12 +23,12 @@
     {
       "id": 5,
       "brandName": "Revlon",
-      "brandImage": "https://i.ibb.co/pwsKb20/Revlon.jpg"
+      "brandImage": "https://i.ibb.co/LzP78bs/Revlon-brand.jpg"
     },
     {
       "id": 6,
       "brandName": "Coty",
-      "brandImage": "https://i.ibb.co/6RVV31f/Coty.jpg"
+      "brandImage": "https://i.ibb.co/NmD6Jxc/Coty-Brands.jpg"
     }
   ]
   

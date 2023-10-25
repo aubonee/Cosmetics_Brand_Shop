@@ -1,12 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
+import Footer from '../components/Footer';
 const Mainlayout = () => {
     return (
-        <div>
+        <div className='bg-[#F8F0E5] dark:bg-slate-900 dark:text-white'>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <h2>footer</h2>
+           <Footer></Footer>
         </div>
     );
 };

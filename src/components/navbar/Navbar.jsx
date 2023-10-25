@@ -57,25 +57,26 @@ const Navbar = () => {
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost lg:hidden">
+      <label tabIndex={0} className=" mx-3 lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-       <li> <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }> Home </NavLink></li>
+       <li className='text-[#FF6969] upper-case text-xl font-bold'> <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }> Home </NavLink></li>
      
-       <li> <NavLink to="/addproduct" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>   Add Product</NavLink></li>
+       <li className='text-[#FF6969] upper-case text-xl font-bold'> <NavLink to="/addproduct" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }>   Add Product</NavLink></li>
      
+       <li  className='text-[#FF6969] upper-case text-xl font-bold'> <NavLink to="/myCart" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }>   My Cart</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className=" upper-case text-xl ">Glam <span className='text-[#BB2525]'>Aura</span> </a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-     <li> <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }> Home </NavLink></li>
+    <ul className="menu  menu-horizontal px-1 text-[#FF6969] text-bold">
+     <li className='text-[#FF6969] upper-case text-xl '> <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }> Home </NavLink></li>
       
-     <li> <NavLink to="/addproduct" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>   Add Product</NavLink></li>
+     <li  className='text-[#FF6969] upper-case text-xl '> <NavLink to="/addproduct" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }>   Add Product</NavLink></li>
   
-     <li> <NavLink to="/myCart" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>   My Cart</NavLink></li>
+     <li  className='text-[#FF6969] upper-case text-xl '> <NavLink to="/myCart" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF6969] underline underline-offset-8" : "" }>   My Cart</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end">
@@ -88,12 +89,12 @@ const Navbar = () => {
     </div>
 
 
-  <li> <NavLink to="/register" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "" }>   Register</NavLink></li>
+ 
   {
     user ?
-    <button onClick={handleSignOut} className="text-sm lg:text-lg my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]">Sign Out</button>
+    <button onClick={handleSignOut} className="text-sm  my-2 mx-2 btn rounded-none bg-[#FF6969]  border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FF6969]">Sign Out</button>
   :
-  <Link className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/login">Login</Link>
+  <Link className=" my-2 mx-2 btn rounded-none bg-[#FF6969] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FF6969]" to="/login">Login</Link>
   }
 
 <label className="swap swap-rotate">
